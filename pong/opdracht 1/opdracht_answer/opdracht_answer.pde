@@ -1,14 +1,20 @@
+int radius = 200;
+int centerX;
+int centerY;
+
 void setup() {
   size(600, 600);
+  centerX = width / 2;
+  centerY = height / 2;
 }
 
 void draw() {
   background(0);
   noStroke();
-  if (dist(width / 2, height / 2, mouseX, mouseY) < 200) {
+  if (dist(centerX, centerY, mouseX, mouseY) < radius) {
     fill(0, 255, 0);
   } else {
     fill(255, 0, 0);
   }
-  ellipse(width / 2, height / 2, 400, 400);
+  circle(centerX, centerY, radius * 2);
 }
