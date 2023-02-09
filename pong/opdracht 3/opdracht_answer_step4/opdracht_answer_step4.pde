@@ -33,8 +33,7 @@ void draw() {
 void keyPressed() {
   if (key == 'w') {
     isWIngedrukt = true;
-  }
-  if (key == 's') {
+  } else if (key == 's') {
     isSIngedrukt = true;
   }
 }
@@ -42,8 +41,7 @@ void keyPressed() {
 void keyReleased() {
   if (key == 'w') {
     isWIngedrukt = false;
-  }
-  if (key == 's') {
+  } else if (key == 's') {
     isSIngedrukt = false;
   }
 }

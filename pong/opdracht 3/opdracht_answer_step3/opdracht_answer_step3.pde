@@ -18,8 +18,7 @@ void draw() {
   if (keyPressed) {
     if (key == 'w') {
       paddelPos -= paddelSpeed * dt;
-    }
-    if (key == 's') {
+    } else if (key == 's') {
       paddelPos += paddelSpeed * dt;
     }
   }

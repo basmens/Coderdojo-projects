@@ -25,16 +25,14 @@ void draw() {
   if (circlePosX - radius < 0) {
     circleDirection = PI - circleDirection;
     circlePosX = radius;
-  }
-  if (circlePosX + radius > width) {
+  } else if (circlePosX + radius > width) {
     circleDirection = PI - circleDirection;
     circlePosX = width - radius;
   }
   if (circlePosY - radius < 0) {
     circleDirection = TWO_PI - circleDirection;
     circlePosY = radius;
-  }
-  if (circlePosY + radius > height) {
+  } else if (circlePosY + radius > height) {
     circleDirection = TWO_PI - circleDirection;
     circlePosY = height - radius;
   }
