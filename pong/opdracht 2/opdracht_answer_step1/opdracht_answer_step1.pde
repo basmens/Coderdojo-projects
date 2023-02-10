@@ -1,19 +1,19 @@
-float circlePosX;
-float circlePosY;
-float circleSpeedX;
-float circleSpeedY;
-int radius;
+float cirkelPositieX;
+float cirkelPositieY;
+float cirkelSnelheidX;
+float cirkelSnelheidY;
+int cirkelRadius;
 
 int prevTime;
 
 void setup() {
   size(1000, 600);
   
-  circlePosX = 0;
-  circlePosY = height;
-  circleSpeedX = width / 5;
-  circleSpeedY = -height / 5;
-  radius = width / 5;
+  cirkelPositieX = 0;
+  cirkelPositieY = height;
+  cirkelSnelheidX = width / 5;
+  cirkelSnelheidY = -height / 5;
+  cirkelRadius = width / 5;
 }
 
 void draw() {
@@ -22,10 +22,10 @@ void draw() {
   float dt = (millis() - prevTime) / 1000F;
   prevTime = millis();
   
-  circlePosX += circleSpeedX * dt;
-  circlePosY += circleSpeedY * dt;
+  cirkelPositieX += cirkelSnelheidX * dt;
+  cirkelPositieY += cirkelSnelheidY * dt;
      
   noStroke();
   fill(255, 0, 0);
-  circle(circlePosX, circlePosY, 2 * radius);
+  circle(cirkelPositieX, cirkelPositieY, 2 * cirkelRadius);
 }

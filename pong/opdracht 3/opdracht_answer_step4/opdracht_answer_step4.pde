@@ -1,5 +1,5 @@
-float paddelPos;
-float paddelSpeed;
+float paddelPositieY;
+float paddelSnelheidY;
 
 boolean isWIngedrukt;
 boolean isSIngedrukt;
@@ -9,7 +9,7 @@ int prevUpdate;
 void setup() {
   size(600, 1000);
 
-  paddelSpeed = 200;
+  paddelSnelheidY = 200;
 }
 
 void draw() {
@@ -19,15 +19,15 @@ void draw() {
   prevUpdate = millis();
 
   if (isWIngedrukt) {
-    paddelPos -= paddelSpeed * dt;
+    paddelPositieY -= paddelSnelheidY * dt;
   }
   if (isSIngedrukt) {
-    paddelPos += paddelSpeed * dt;
+    paddelPositieY += paddelSnelheidY * dt;
   }
 
   noStroke();
   fill(230);
-  rect(width / 2 - 50, paddelPos - 150, 100, 300);
+  rect(width / 2 - 50, paddelPositieY - 150, 100, 300);
 }
 
 void keyPressed() {

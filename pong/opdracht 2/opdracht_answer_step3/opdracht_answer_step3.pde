@@ -1,19 +1,19 @@
-float circlePosX;
-float circlePosY;
-float circleSpeed;
-float circleDirection;
-int radius;
+float cirkelPositieX;
+float cirkelPositieY;
+float cirkelSnelheid;
+float cirkelRichting;
+int cirkelRadius;
 
 int prevTime;
 
 void setup() {
   size(1000, 600);
   
-  circlePosX = width / 2;
-  circlePosY = height / 2;
-  circleSpeed = 200;
-  circleDirection = random(TWO_PI);
-  radius = width / 10;
+  cirkelPositieX = width / 2;
+  cirkelPositieY = height / 2;
+  cirkelSnelheid = 200;
+  cirkelRichting = random(TWO_PI);
+  cirkelRadius = width / 10;
 }
 
 void draw() {
@@ -22,25 +22,25 @@ void draw() {
   float dt = (millis() - prevTime) / 1000F;
   prevTime = millis();
   
-  if (circlePosX - radius < 0) {
-    circleDirection = PI - circleDirection;
-    circlePosX = radius;
-  } else if (circlePosX + radius > width) {
-    circleDirection = PI - circleDirection;
-    circlePosX = width - radius;
+  if (cirkelPositieX - cirkelRadius < 0) {
+    cirkelRichting = PI - cirkelRichting;
+    cirkelPositieX = cirkelRadius;
+  } else if (cirkelPositieX + cirkelRadius > width) {
+    cirkelRichting = PI - cirkelRichting;
+    cirkelPositieX = width - cirkelRadius;
   }
-  if (circlePosY - radius < 0) {
-    circleDirection = TWO_PI - circleDirection;
-    circlePosY = radius;
-  } else if (circlePosY + radius > height) {
-    circleDirection = TWO_PI - circleDirection;
-    circlePosY = height - radius;
+  if (cirkelPositieY - cirkelRadius < 0) {
+    cirkelRichting = TWO_PI - cirkelRichting;
+    cirkelPositieY = cirkelRadius;
+  } else if (cirkelPositieY + cirkelRadius > height) {
+    cirkelRichting = TWO_PI - cirkelRichting;
+    cirkelPositieY = height - cirkelRadius;
   }
   
-  circlePosX += cos(circleDirection) * circleSpeed * dt;
-  circlePosY += sin(circleDirection) * circleSpeed * dt;
+  cirkelPositieX += cos(cirkelRichting) * cirkelSnelheid * dt;
+  cirkelPositieY += sin(cirkelRichting) * cirkelSnelheid * dt;
      
   noStroke();
   fill(255, 0, 0);
-  circle(circlePosX, circlePosY, 2 * radius);
+  circle(cirkelPositieX, cirkelPositieY, 2 * cirkelRadius);
 }

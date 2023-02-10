@@ -1,12 +1,12 @@
-float paddelPos;
-float paddelSpeed;
+float paddelPositieY;
+float paddelSnelheidY;
 
 int prevUpdate;
 
 void setup() {
   size(600, 1000);
   
-  paddelSpeed = 200;
+  paddelSnelheidY = 200;
 }
 
 void draw() {
@@ -16,12 +16,12 @@ void draw() {
   prevUpdate = millis();
   
   if (key == 'w') {
-    paddelPos -= paddelSpeed * dt;
+    paddelPositieY -= paddelSnelheidY * dt;
   } else if (key == 's') {
-    paddelPos += paddelSpeed * dt;
+    paddelPositieY += paddelSnelheidY * dt;
   }
   
   noStroke();
   fill(230);
-  rect(width / 2 - 50, paddelPos - 150, 100, 300);
+  rect(width / 2 - 50, paddelPositieY - 150, 100, 300);
 }
